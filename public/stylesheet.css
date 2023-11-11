@@ -1,0 +1,31 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.albumTrashIcon {
+  position: absolute;
+  bottom: 15px;
+  right: 1px;
+  margin: 2.5rem;
+  color: #f6f6f6;
+}
+
+.starIcon {
+  position: absolute;
+  top: 15px;
+  right: 1px;
+  margin: 2.5rem;
+  color: #f9f21f;
+}
+
+.invisible {
+  display: none;
+}

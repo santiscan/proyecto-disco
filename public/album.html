@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="stylesheet.css" />
+    <title>Plataforma Disco</title>
+    <link rel="icon" type="image/x-icon" href="imagenes/favicon/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/24b7708af3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body class="h-full">
+    <div class="min-h-screen h-full flex">
+      <div class="sidebar w-1/5 bg-black">
+        <div
+          class="text-white text-center m-y-5 border-b-2 border-b-white p-4 font-bold flex items-center"
+        >
+          <img
+            src="imagenes/winstonChurchillProfileImage.jpg"
+            alt="winston churchill profile pic"
+            class="w-10 rounded-full ml-2 mr-4"
+          />
+          Santi Scanlan
+        </div>
+
+        <div
+          class="text-white text-center m-y-5 border-b-2 border-b-white p-4 font-bold"
+        >
+          <a id="otherAlbums" class="cursor-pointer">Other Albums</a>
+        </div>
+        <div
+          class="text-white text-center m-y-5 border-b-2 border-b-white p-4 font-bold"
+        >
+          <a id="editAlbum" class="cursor-pointer">Edit Album</a>
+        </div>
+        <div
+          class="text-white text-center m-y-5 border-b-2 border-b-white p-4 font-bold"
+        >
+          <a id="addSong" class="cursor-pointer">Add Song</a>
+        </div>
+        <div
+          class="text-white text-center m-y-5 border-b-2 border-b-white p-4 font-bold"
+        >
+          Log Out
+        </div>
+      </div>
+
+      <div
+        class="flex-auto content h-full w-4/5 bg-gradient-to-r from-purple-500 to-pink-500"
+      >
+        <div id="albumInfo"></div>
+
+        <h2 class="text-4xl text-left font-bold mt-10 ml-10 mb-4">Canciones</h2>
+
+        <div id="songList" class="flex flex-wrap justify-start song"></div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="album.js"></script>
+  </body>
+</html>

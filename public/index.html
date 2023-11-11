@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="stylesheet.css" />
+    <title>Plataforma Disco</title>
+    <link rel="icon" type="image/x-icon" href="imagenes/favicon/favicon.ico" />
+    <script
+      src="https://kit.fontawesome.com/24b7708af3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body class="h-full">
+    <div class="min-h-screen flex">
+      <div class="sidebar w-1/5 bg-black">
+        <div
+          class="text-white text-center m-y-5 border-b-2 border-b-white p-4 font-bold flex items-center"
+        >
+          <img
+            src="imagenes/winstonChurchillProfileImage.jpg"
+            alt="winston churchill profile pic"
+            class="w-10 rounded-full ml-2 mr-4"
+          />
+          <span id="sidebarUserName"> Santi Scanlan </span>
+        </div>
+
+        <div
+          id="addAlbum"
+          class="text-white text-center m-y-5 border-b-2 border-b-white p-4 font-bold cursor-pointer"
+        >
+          Add Album
+        </div>
+        <div
+          class="text-white text-center m-y-5 border-b-2 border-b-white p-4 font-bold"
+        >
+          <a href="tourDates.html">Tour Dates</a>
+        </div>
+
+        <div
+          id="addUsers"
+          class="text-white text-center m-y-5 border-b-2 border-b-white p-4 font-bold cursor-pointer"
+        >
+          Add Users
+        </div>
+
+        <div
+          id="logOut"
+          class="text-white text-center m-y-5 border-b-2 border-b-white p-4 font-bold cursor-pointer"
+        >
+          Log Out
+        </div>
+      </div>
+
+      <div
+        class="content h-full w-4/5 bg-gradient-to-r from-purple-500 to-pink-500"
+      >
+        <h1 class="text-6xl font-bold mt-10 ml-10">El kanka</h1>
+
+        <p class="mt-10 ml-10 w-1/2">
+          Juan Gómez Canca (Málaga, 9 de octubre de 1982), conocido
+          artísticamente como el Kanka, es un cantautor, compositor y músico
+          español. Desde que empezó su carrera en solitario en 2007 ha
+          conseguido consagrarse como uno de los mejores figurantes de la nueva
+          generación de cantautores de España.1​2​3​ Su música es un punto de
+          afluencia de diferentes estilos y músicos: Roberto Iniesta, La Cabra
+          Mecánica o Jorge Drexler entre otros.
+        </p>
+
+        <h2 class="text-4xl text-center font-bold mt-10 ml-10">Albums</h2>
+
+        <div
+          class="flex flex-row flex-wrap justify-center albumContainer"
+        ></div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
