@@ -1,3 +1,8 @@
+import { onLoad } from "./utils/utils.js";
+import { logOut } from "./utils/utils.js";
+
+onLoad();
+
 function getInputValues() {
   inputValuesObject = {};
   let form = document.querySelector("form");

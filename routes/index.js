@@ -23,7 +23,7 @@ router.post("/login", async (req, res) => {
     let payload = { _id, name, surname, email };
 
     if (passwordsMatch) {
-      console.log("los passwords coinciden");
+      console.log("PAGINA LOGIN: los passwords coinciden");
       let token = jwt.sign(payload, secret, { expiresIn: "24h" });
       res.cookie("token", token);
       res.status(200).send(payload);
@@ -46,16 +46,17 @@ router.post("/logout", async (req, res) => {
   }
 });
 
-router.get("/me", (req, res) => {
+router.get("/me", async (req, res) => {
   try {
     const token = req.cookies.token;
-    const payload = jwt.verify(token, secret);
+    const payload = await jwt.verify(token, secret);
     res.send(payload);
   } catch (error) {
     res.status(401).send(error);
   }
 });
 
+// ESTO ESTA EN SUS ARCHIVOS DE RUTAS CORRESPONDIENTES
 // buscar todos los usuarios
 // router.get("/user", async (req, res) => {
 //   try {

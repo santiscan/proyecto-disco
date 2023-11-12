@@ -1,3 +1,8 @@
+import { onLoad } from "./utils/utils.js";
+import { logOut } from "./utils/utils.js";
+
+onLoad();
+
 let search = window.location.search;
 let albumId = search.slice(1).split("&")[0].split("=")[1];
 let album;
@@ -69,7 +74,7 @@ function renderSong(songInfo, songNumber) {
   trashIcon.classList.add("fa-solid", "fa-trash");
   trashIcon.style.color = "#fafafa";
   trashIcon.value = songInfo["_id"];
-  console.log("trashIcon value:", trashIcon.value);
+
   trashIcon.addEventListener("click", () => {
     deleteSong(trashIcon.value);
   });

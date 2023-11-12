@@ -2,19 +2,31 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+dotenv.config();
+const port = process.env.PORT;
+const password = process.env.PASSWORD;
+
 // const routes = require("./routes/index.js");
 const usersRouter = require("./routes/users.js");
 const bandsRouter = require("./routes/bands.js");
 const indexRouter = require("./routes/index.js");
 
-const url =
-  "mongodb+srv://santiagoscanlan:plataforma5@plataforma-disco.gqjk0t7.mongodb.net/?retryWrites=true&w=majority";
+const url = `mongodb+srv://santiagoscanlan:${password}@plataforma-disco.gqjk0t7.mongodb.net/?retryWrites=true&w=majority`;
 const Album = require("./models/Album.js");
 const User = require("./models/User.js");
 const cookieParser = require("cookie-parser");
 
 // MIDDLEWARES
-app.use(express.static(path.join(__dirname, "public")));
+app.use(
+  express.static(path.join(__dirname, "public"), {
+    setHeaders: (res, path) => {
+      if (path.endsWith(".js")) {
+        res.setHeader("Content-Type", "application/javascript");
+      }
+    },
+  })
+);
 app.use(cookieParser());
 app.use(express.json());
 
@@ -27,8 +39,8 @@ app.use("/band", bandsRouter);
 const connectToMongo = async () => {
   try {
     await mongoose.connect(url);
-    app.listen(8000, () => {
-      console.log("Server on port 8000 and DB connected!");
+    app.listen(port, () => {
+      console.log(`Server on port ${port} and DB connected!`);
     });
   } catch (error) {
     console.log(error);

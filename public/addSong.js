@@ -1,3 +1,8 @@
+import { onLoad } from "./utils/utils.js";
+import { logOut } from "./utils/utils.js";
+
+onLoad();
+
 let album;
 let albumId = window.location.href.split("album=")[1];
 

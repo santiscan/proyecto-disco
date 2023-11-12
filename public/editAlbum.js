@@ -1,3 +1,8 @@
+import { onLoad } from "./utils/utils.js";
+import { logOut } from "./utils/utils.js";
+
+onLoad();
+
 let titleInput = document.querySelector("#albumTitleInput");
 let descriptionInput = document.querySelector("#albumDescriptionInput");
 let albumImageInput = document.querySelector("#albumImageInput");
