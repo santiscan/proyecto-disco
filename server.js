@@ -34,6 +34,7 @@ app.use(express.json());
 app.use("/", indexRouter);
 app.use("/user", usersRouter);
 app.use("/band", bandsRouter);
+app.use("/health", (req, res) => res.sendStatus(200));
 
 // CONNECTION TO DB
 const connectToMongo = async () => {

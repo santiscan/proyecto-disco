@@ -74,7 +74,6 @@ function renderSong(songInfo, songNumber) {
   trashIcon.classList.add("fa-solid", "fa-trash");
   trashIcon.style.color = "#fafafa";
   trashIcon.value = songInfo["_id"];
-
   trashIcon.addEventListener("click", () => {
     deleteSong(trashIcon.value);
   });

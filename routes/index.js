@@ -6,9 +6,12 @@ const Album = require("../models/Album.js");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-const secret = "hola";
+const dotenv = require("dotenv");
+dotenv.config();
+const secret = process.env.SECRET;
 
 // enviar informacion de login
+
 router.post("/login", async (req, res) => {
   try {
     let userCredentials = req.body;
